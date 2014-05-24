@@ -107,7 +107,7 @@ github: publish
 	git checkout source
 	ghp-import $(OUTPUTDIR)
 	git checkout master
-	git merge gh-pages
+	git merge --no-edit gh-pages
 	git push --all
 	git checkout source
 
