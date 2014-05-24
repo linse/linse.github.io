@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'linse'
 SITENAME = u'Stefanie Schirmer'
 SITEURL = ''
+THEME = 'pelican-octopress-theme'
 
 TIMEZONE = 'Europe/Paris'
 

@@ -63,9 +63,11 @@ regenerate:
 
 serve:
 ifdef PORT
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
+	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT) &
+	firefox http://localhost:$(PORT)
 else
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server
+	cd $(OUTPUTDIR) && $(PY) -m pelican.server &
+	firefox http://localhost:8000
 endif
 
 devserver:
