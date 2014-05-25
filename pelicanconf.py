@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'linse'
 SITENAME = u'Stefanie Schirmer'
-SITEURL = ''
+SITEURL = 'linse.github.io'
 THEME = 'pelican-octopress-theme'
 
 TIMEZONE = 'Europe/Paris'
@@ -23,9 +23,10 @@ LINKS =  (('Pelican', 'http://getpelican.com/'),
           ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('github', 'http://github.com/linse'),
+          ('twitter', 'http://twitter.com/linse'),)
 
+DEFAULT_CATEGORY = 'blog'
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
