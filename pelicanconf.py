@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'linse'
 SITENAME = u'Stefanie Schirmer'
-SITEURL = 'http://linse.github.io/'
+SITEURL = ''
 THEME = '/home/linse/cloned/linse.github.io/themes/linse'
 
 TIMEZONE = 'Europe/Paris'
