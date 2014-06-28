@@ -84,24 +84,53 @@ stopserver:
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	if test -d $(BASEDIR)/extra; then cp $(BASEDIR)/extra/* $(OUTPUTDIR)/; fi
 
-ssh_upload: publish
-	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+PAGESDIR=$(INPUTDIR)/pages
+DATE := $(shell date +'%Y-%m-%d %H:%M:%S')
+SLUG := $(shell echo '${NAME}' | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z)
+EXT ?= md
 
-rsync_upload: publish
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
+newpost:
+ifdef NAME
+    echo "Title: $(NAME)" >  $(INPUTDIR)/$(SLUG).$(EXT)
+    echo "Slug: $(SLUG)" >> $(INPUTDIR)/$(SLUG).$(EXT)
+    echo "Date: $(DATE)" >> $(INPUTDIR)/$(SLUG).$(EXT)
+    echo ""              >> $(INPUTDIR)/$(SLUG).$(EXT)
+    echo ""              >> $(INPUTDIR)/$(SLUG).$(EXT)
+    ${EDITOR} ${INPUTDIR}/${SLUG}.${EXT} &
+else
+    @echo 'Variable NAME is not defined.'
+    @echo 'Do make newpost NAME='"'"'Post Name'"'"
+endif
 
-dropbox_upload: publish
-	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
+editpost:
+ifdef NAME
+    ${EDITOR} ${INPUTDIR}/${SLUG}.${EXT} &
+else
+    @echo 'Variable NAME is not defined.'
+    @echo 'Do make editpost NAME='"'"'Post Name'"'"
+endif
 
-ftp_upload: publish
-	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
+newpage:
+ifdef NAME
+    echo "Title: $(NAME)" >  $(PAGESDIR)/$(SLUG).$(EXT)
+    echo "Slug: $(SLUG)" >> $(PAGESDIR)/$(SLUG).$(EXT)
+    echo ""              >> $(PAGESDIR)/$(SLUG).$(EXT)
+    echo ""              >> $(PAGESDIR)/$(SLUG).$(EXT)
+    ${EDITOR} ${PAGESDIR}/${SLUG}.$(EXT)
+else
+    @echo 'Variable NAME is not defined.'
+    @echo 'Do make newpage NAME='"'"'Page Name'"'"
+endif
 
-s3_upload: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed
-
-cf_upload: publish
-	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
+editpage:
+ifdef NAME
+    ${EDITOR} ${PAGESDIR}/${SLUG}.$(EXT)
+else
+    @echo 'Variable NAME is not defined.'
+    @echo 'Do make editpage NAME='"'"'Page Name'"'"
+endif
 
 github: publish
 	git checkout source
