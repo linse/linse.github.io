@@ -29,5 +29,6 @@ SOCIAL = (('github', 'http://github.com/linse'),
 DEFAULT_CATEGORY = 'blog'
 DEFAULT_PAGINATION = 10
 
+PLUGINS = ['render_math']
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
