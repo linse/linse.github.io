@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>O hai</title>
+  <title>Dynamic Programming at ease</title>
   <meta name="author" content="linse">
 
 
@@ -46,17 +46,34 @@
 <div>
   <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">O hai</h1>
-      <p class="meta"><time datetime="2013-08-22T16:08:00" pubdate>Thu 22 August 2013</time></p>
+      <h1 class="entry-title">Dynamic Programming at ease</h1>
+      <p class="meta"><time datetime="2014-09-13T16:08:00" pubdate>Sat 13 September 2014</time></p>
 </header>
 
-  <div class="entry-content"><p>was here :)</p></div>
+  <div class="entry-content"><p>Once upon a time I was a student in bioinformatics and was learning about Dynamic Programming. Back in the day, it was complicated and error-prone. 
+Dynamic Programming in used to solve optimization problems that are computationally complexive.</p>
+<p>In order to speed up a computation, in DP we save intermediate results in a table in order to reuse them in the computation. That often leads to very complicated code, containing both the algorithm and the table access code via index access or subscripts when written down as a formula. Due to the combinatorial nature of the problem, these formulas are recursive, and are called recurrences.
+Every day I had to face new complex recurrences full of subscripts for table access, and trying to implement them and get the indices for table access right was a matter of experience, talent and luck!</p>
+<p>One day, a group from Bielefeld found out that all the intertwined aspects of dynamic programming could be modularized to make it easier to reason about such problems.
+All the aspects of solving a combinatorial optimization problem include modular steps such as the reading of the input for the problem, building of the search space, evaluating the candidates in the search space, and selecting the desired optimal solution. Deciding which parts of the formulas we should tabulate, and also filling and accesssing the tables are a completely separate problem as well.</p>
+<p>A dynamic programming problem works, <em>because</em> we do all the above steps at the same time.
+That means <em>while</em> we are constructing the search space, we are at the same time evaluating and possibly throwing out search space candidates, if their score is not optimal.
+So we see there is a lot going on in classical Dynamic Programming, and this can for sure be overwhelming!</p>
+<p>Lets modularize it and talk about all the separate parts!</p>
+<p>The Signature: Candidates are trees
+How does the construction of the search space actually work when we develop a dynamic programming algorithm?
+Lets imagine we are reading in strings as input.
+Lets also pretend we dont know anything about dynamic programming at all.
+But we have the magical ability to see the candidate construction at each step.
+In this way we can reverse engineer a dynamic programming algorithm from the format of the candidates, and -boom- we developed an algorithm.</p>
+<p>The Algebra: Questions are algebras</p>
+<p>The Grammar: Programs are grammars</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
     Posted by <span class="fn">linse</span>
   </span>
-<time datetime="2013-08-22T16:08:00" pubdate>Thu 22 August 2013</time></p><div class="sharing">
+<time datetime="2014-09-13T16:08:00" pubdate>Sat 13 September 2014</time></p><div class="sharing">
 </div>    </footer>
   </article>
 
@@ -66,7 +83,7 @@
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="/o-hai.html">O hai</a>
+          <a href="/dynamic-programming-at-ease.html">Dynamic Programming at ease</a>
       </li>
     </ul>
   </section>
