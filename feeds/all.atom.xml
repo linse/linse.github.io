@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Stefanie Schirmer</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-09-13T16:08:00+02:00</updated><entry><title>Dynamic Programming at ease</title><link href="/dynamic-programming-at-ease.html" rel="alternate"></link><updated>2014-09-13T16:08:00+02:00</updated><author><name>linse</name></author><id>tag:,2014-09-13:dynamic-programming-at-ease.html</id><summary type="html">&lt;p&gt;Once upon a time I was a student in bioinformatics and was learning about Dynamic Programming. Back in the day, it was complicated and error-prone. 
-Dynamic Programming in used to solve optimization problems that are computationally complexive.&lt;/p&gt;
-&lt;p&gt;In order to speed up a computation, in DP we save intermediate results in a table in order to reuse them in the computation. That often leads to very complicated code, containing both the algorithm and the table access code via index access or subscripts when written down as a formula. Due to the combinatorial nature of the problem, these formulas are recursive, and are called recurrences.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Stefanie Schirmer</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2014-09-13T16:08:00+02:00</updated><entry><title>Dynamic Programming at ease</title><link href="/dynamic-programming-at-ease.html" rel="alternate"></link><updated>2014-09-13T16:08:00+02:00</updated><author><name>linse</name></author><id>tag:,2014-09-13:dynamic-programming-at-ease.html</id><summary type="html">&lt;p&gt;Once upon a time I was a student in bioinformatics and was learning about Dynamic Programming. Back in the day, this was a complicated and error-prone task. 
+In brief, &lt;a href="http://en.wikipedia.org/wiki/Dynamic_programming"&gt;Dynamic Programming&lt;/a&gt; is a style of programming that enables us to solve optimization problems that are computationally complexive. If you dont know about Dynamic Programming yet, don't worry too much, we are learning about it along the way, and the way in which we talk about it will be new for everybody.
+Also, don't get confused by the term "Dynamic" in the name of the method, it is just there for historical reasons.&lt;/p&gt;
+&lt;p&gt;In order to speed up a computation, in Dynamic Programming we save intermediate results in a table in order to reuse them in the computation. That often leads to very complicated code, containing both the algorithm and the table access code via index access or subscripts when written down as a formula. Due to the combinatorial nature of the problem, these formulas are recursive, and are called recurrences.
 Every day I had to face new complex recurrences full of subscripts for table access, and trying to implement them and get the indices for table access right was a matter of experience, talent and luck!&lt;/p&gt;
-&lt;p&gt;One day, a group from Bielefeld found out that all the intertwined aspects of dynamic programming could be modularized to make it easier to reason about such problems.
-All the aspects of solving a combinatorial optimization problem include modular steps such as the reading of the input for the problem, building of the search space, evaluating the candidates in the search space, and selecting the desired optimal solution. Deciding which parts of the formulas we should tabulate, and also filling and accesssing the tables are a completely separate problem as well.&lt;/p&gt;
+&lt;p&gt;One day, a group from Bielefeld found out that all the intertwined aspects of dynamic programming can be modularized to make it easier to reason about such problems.
+All the aspects of solving a combinatorial optimization problem include modular steps, such as the reading of the input for the problem, building of the search space, evaluating the candidates in the search space, and selecting the desired optimal solution. Deciding which parts of the formulas we should tabulate, and also filling and accesssing the tables are a completely separate problem as well.&lt;/p&gt;
 &lt;p&gt;A dynamic programming problem works, &lt;em&gt;because&lt;/em&gt; we do all the above steps at the same time.
 That means &lt;em&gt;while&lt;/em&gt; we are constructing the search space, we are at the same time evaluating and possibly throwing out search space candidates, if their score is not optimal.
 So we see there is a lot going on in classical Dynamic Programming, and this can for sure be overwhelming!&lt;/p&gt;
 &lt;p&gt;Lets modularize it and talk about all the separate parts!&lt;/p&gt;
-&lt;p&gt;The Signature: Candidates are trees
-How does the construction of the search space actually work when we develop a dynamic programming algorithm?
-Lets imagine we are reading in strings as input.
-Lets also pretend we dont know anything about dynamic programming at all.
-But we have the magical ability to see the candidate construction at each step.
+&lt;p&gt;Part 1
+The Signature: Candidates are trees&lt;/p&gt;
+&lt;p&gt;How does the construction of the search space actually work when we develop a dynamic programming algorithm?
+Let's imagine we are reading in strings as input.
+Let's also pretend we don't know anything about dynamic programming at all.
+But we have the magic ability to see the candidate construction at each step.
 In this way we can reverse engineer a dynamic programming algorithm from the format of the candidates, and -boom- we developed an algorithm.&lt;/p&gt;
-&lt;p&gt;The Algebra: Questions are algebras&lt;/p&gt;
-&lt;p&gt;The Grammar: Programs are grammars&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;Let's reverse engineer an alignment of two strings.&lt;/p&gt;
+&lt;p&gt;Part 2
+The Algebra: Questions are algebras&lt;/p&gt;
+&lt;p&gt;Part 3
+The Grammar: Programs are grammars&lt;/p&gt;</summary></entry></feed>
