@@ -5,7 +5,7 @@ Once upon a time I was a student in bioinformatics and was learning about Dynami
 In brief, [Dynamic Programming](http://en.wikipedia.org/wiki/Dynamic_programming) is a style of programming that enables us to solve optimization problems that are computationally complex. If you dont know about Dynamic Programming yet, don't worry too much, we are learning about it along the way, and the way in which we talk about it will be new for everybody.
 Also, don't get confused by the term "Dynamic" in the name of the method, it is just there for historical reasons.
 
-In order to speed up a computation, in Dynamic Programming we save intermediate results in a table in order to reuse them in the computation. That often leads to very complicated code, containing both the algorithm and the table access code via index access or subscripts when written down as a formula. Due to the combinatorial nature of the problem, these formulas are recursive, and are called recurrences.
+In order to speed up a computation, in Dynamic Programming we save intermediate results in a table to be able to reuse them in the computation. That often leads to very complicated code, containing both the algorithm and the table access code via index access or subscripts when written down as a formula. Due to the combinatorial nature of the problem, these formulas are recursive, and are called recurrences.
 Every day I had to face new complex recurrences full of subscripts for table access, and trying to implement them and get the indices for table access right was a matter of experience, talent and luck!
 
 One day, a group from Bielefeld found out that all the intertwined aspects of dynamic programming can be modularized to make it easier to reason about such problems.
