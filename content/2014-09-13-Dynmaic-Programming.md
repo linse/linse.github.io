@@ -2,7 +2,7 @@ Title: Dynamic Programming at ease
 Date: 2014-09-13 16:08
 
 Once upon a time I was a student in bioinformatics and was learning about Dynamic Programming. Back in the day, this was a complicated and error-prone task. 
-In brief, [Dynamic Programming](http://en.wikipedia.org/wiki/Dynamic_programming) is a style of programming that enables us to solve optimization problems that are computationally complexive. If you dont know about Dynamic Programming yet, don't worry too much, we are learning about it along the way, and the way in which we talk about it will be new for everybody.
+In brief, [Dynamic Programming](http://en.wikipedia.org/wiki/Dynamic_programming) is a style of programming that enables us to solve optimization problems that are computationally complex. If you dont know about Dynamic Programming yet, don't worry too much, we are learning about it along the way, and the way in which we talk about it will be new for everybody.
 Also, don't get confused by the term "Dynamic" in the name of the method, it is just there for historical reasons.
 
 In order to speed up a computation, in Dynamic Programming we save intermediate results in a table in order to reuse them in the computation. That often leads to very complicated code, containing both the algorithm and the table access code via index access or subscripts when written down as a formula. Due to the combinatorial nature of the problem, these formulas are recursive, and are called recurrences.
@@ -17,8 +17,8 @@ So we see there is a lot going on in classical Dynamic Programming, and this can
 
 Lets modularize it and talk about all the separate parts!
 
-Part 1
-The Signature: Candidates are trees
+# Part 1
+### The Signature: Candidates are trees
 
 How does the construction of the search space actually work when we develop a dynamic programming algorithm?
 Let's imagine we are reading in strings as input.
@@ -28,8 +28,8 @@ In this way we can reverse engineer a dynamic programming algorithm from the for
 
 Let's reverse engineer an alignment of two strings.
 
-Part 2
-The Algebra: Questions are algebras
+# Part 2
+### The Algebra: Questions are algebras
 
-Part 3
-The Grammar: Programs are grammars
+# Part 3
+### The Grammar: Programs are grammars
